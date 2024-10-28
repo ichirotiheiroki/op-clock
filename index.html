@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+    </style>
+</head>
+<body>
+<div class="clock-frame">
+    <div class="clock">
+        <div class="number">10</div>
+        <div class="number">11</div>
+        <div class="number">12</div>
+        <div class="number">1</div>
+        <div class="number">2</div>
+        <div class="number">3</div>
+        <div class="number">4</div>
+        <div class="number">5</div>
+        <div class="number">6</div>
+        <div class="number">7</div>
+        <div class="number">8</div>
+        <div class="number">9</div>
+        <div class="arrow-h"></div>
+        <div class="arrow-m"></div>
+        <div class="arrow-s"></div>
+        <div class="central-dot"></div>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const clock = document.querySelector('.clock');
+
+        for (let i = 0; i < 6; i++) {
+            const whiteLine = document.createElement('span');
+            whiteLine.classList.add('main');
+            clock.appendChild(whiteLine);
+        }
+
+        for (let i = 0; i < 30; i++) {
+            const geryLine = document.createElement('span');
+            geryLine.classList.add('second');
+            clock.appendChild(geryLine);
+        }
+    })
+
+    function updateClock() {
+        const now = new Date();
+        const seconds = now.getSeconds();
+        const minutes = now.getMinutes();
+        const hours = now.getHours();
+
+
+        const secondsDegrees = ((seconds / 60) * 360) ;
+        const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) ;
+        const hoursDegrees = ((hours % 12) / 12) * 360 + ((minutes / 60) * 30) ;
+
+
+        document.querySelector('.arrow-s').style.transform = `  rotate(${secondsDegrees}deg)`;
+        document.querySelector('.arrow-m').style.transform = `  rotate(${minutesDegrees}deg)`;
+        document.querySelector('.arrow-h').style.transform = `  rotate(${hoursDegrees}deg)`;
+
+        const shadowOffsetX = 12 * Math.cos((secondsDegrees - 90) * (Math.PI / 180));
+        const shadowOffsetY = 12 * Math.sin((secondsDegrees - 90) * (Math.PI / 180));
+
+        document.querySelector('.clock-frame').style.boxShadow = `0 0 23px 4px rgba(140, 140, 140, 0.74) inset, ${shadowOffsetX}px ${shadowOffsetY}px 43px 11px rgba(24, 188, 189, 0.2)`;
+
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+</body>
+</html>
