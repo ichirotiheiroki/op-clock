@@ -74,6 +74,7 @@
     }
 
     function updateClock() {
+        tickSound.currentTime = 0;
         const now = new Date();
         const seconds = now.getSeconds();
         const minutes = now.getMinutes();
@@ -96,7 +97,6 @@
 
 
         if (isSoundEnabled) {
-            tickSound.currentTime = 0;
             tickSound.play().catch(error => {
                 console.log("Автоматическое воспроизведение звука блокировано: ", error);
             });
