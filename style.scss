@@ -91,7 +91,7 @@ html, body {
       height: 100%;
       width: 10px;
       position: absolute;
-      transform: rotate(15deg);transition: transform 0.5s ease-in-out;
+      transform: rotate(15deg);
 
       &::before {
         content: '';
@@ -109,7 +109,7 @@ html, body {
       height: 100%;
       width: 10px;
       position: absolute;
-      transform: rotate(60deg);transition: transform 0.5s ease-in-out;
+      transform: rotate(60deg);
 
       &::before {
         content: '';
@@ -196,81 +196,94 @@ html, body {
 @media screen and (max-width: 768px){
 
   .clock-frame {
-    width: 350px;
+    width: 351px;
 
     .clock {
-      width: 300px;
+      width: 311px;
 
       .number{
         color: white;
         font-family: Roboto, sans-serif;
-        font-size: 24px;
+        font-size: 20px;
         position: absolute;
         top: 30px;
       }
       @for $i from 1 through 12 {
         .number:nth-child(#{$i}) {
-          top: calc(50% - 110px * cos((#{$i} - 3) * 30deg));
-          left: calc(50% + 110px * sin((#{$i} - 3) * 30deg));
+          top: calc(50% - 128px * cos((#{$i} - 3) * 30deg));
+          left: calc(50% + 128px * sin((#{$i} - 3) * 30deg));
           transform: translate(-50%, -50%);
         }
       }
 
       .central-dot {
-        width: 20px;
+        width: 18px;
 
       }
 
       .arrow-s {
-        position: absolute;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        width: 4px;
-        z-index: 5;
+        width: 3px;
 
         &::before {
-          height: 130px;
-          top: 40px;
+          height: 150px;
+          top: 25px;
+          width: 3px;
         }
 
         &::after {
+          width: 7px;
+          height: 7px;
+
         }
       }
 
       .arrow-m {
+        width: 7px;
 
         &::before {
-          height: 90px;
-          top: 60px;
+          height: 100px;
+          top:50px;
+          width: 7px;
         }
       }
 
       .arrow-h {
+        width: 7px;
 
         &::before {
-          height: 60px;
-          top: 90px;
+          height: 80px;
+          top: 75px;
+          width: 7px;
         }
       }
 
 
       .main {
+        height: 2px;
 
         &::before {
+          height: 2px;
+          width: 15px;
         }
 
         &::after {
 
+          height: 2px;
+          width: 15px;
         }
       }
 
       .second {
+        height: 2px;
 
         &::before {
+          height: 2px;
+          width: 10px;
         }
 
         &::after {
+          height: 2px;
+          width: 10px;
         }
       }
 
