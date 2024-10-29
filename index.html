@@ -11,6 +11,12 @@
 
 </head>
 <body>
+
+    <label class="switch">
+        <input id="mute" type="checkbox">
+        <span class="slider"></span>
+    </label>
+
 <div class="clock-frame">
     <div class="clock">
         <div class="arrow-h"></div>
@@ -47,11 +53,27 @@
         }
     })
 
+    let isSoundEnabled = false;
+
+    document.addEventListener("click", () => {
+        isSoundEnabled = true;
+    });
+
+
     const tickSound = new Audio('tick2.wav');
-    tickSound.volume = 0.3;
+    tickSound.volume = 0;
+
+    function toggleMute() {
+        const switchBtn = document.querySelector('#mute')
+        switchBtn.addEventListener('click',(value)=>{
+           if( switchBtn.checked){
+               tickSound.volume = 0.3;
+           } else {tickSound.volume = 0;}
+
+        })
+    }
 
     function updateClock() {
-        tickSound.currentTime = 0;
         const now = new Date();
         const seconds = now.getSeconds();
         const minutes = now.getMinutes();
@@ -73,11 +95,17 @@
         document.querySelector('.clock-frame').style.boxShadow = `0 0 18px 4px rgba(140, 140, 140, 0.74) inset, ${shadowOffsetX}px ${shadowOffsetY}px 43px 12px rgba(24, 188, 189, 0.2)`;
 
 
-        tickSound.play();
+        if (isSoundEnabled) {
+            tickSound.currentTime = 0;
+            tickSound.play().catch(error => {
+                console.log("Автоматическое воспроизведение звука блокировано: ", error);
+            });
+        }
     }
 
     setInterval(updateClock, 1000);
     updateClock();
+    toggleMute()
 </script>
 </body>
 </html>
