@@ -48,7 +48,7 @@
     })
 
     const tickSound = new Audio('tick2.wav');
-
+// tickSound.volume = 50;
     function updateClock() {
         tickSound.currentTime = 0;
         const now = new Date();
@@ -72,7 +72,7 @@
         document.querySelector('.clock-frame').style.boxShadow = `0 0 18px 4px rgba(140, 140, 140, 0.74) inset, ${shadowOffsetX}px ${shadowOffsetY}px 43px 12px rgba(24, 188, 189, 0.2)`;
 
 
-        tickSound.play();
+        // tickSound.play();
     }
 
     setInterval(updateClock, 1000);
