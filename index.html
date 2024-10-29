@@ -25,12 +25,12 @@
     document.addEventListener("DOMContentLoaded", () => {
         const clock = document.querySelector('.clock');
 
-        const numbers = [9,8,7,6,5,4,3,2,1,12,11,10]
+        const numbers = [9, 8, 7, 6, 5, 4, 3, 2, 1, 12, 11, 10]
 
-        for(let number of numbers){
+        for (let number of numbers) {
             const div = document.createElement('span');
             div.classList.add('number');
-            div.innerText=number.toString();
+            div.innerText = number.toString();
             clock.prepend(div);
         }
 
@@ -47,16 +47,19 @@
         }
     })
 
+    const tickSound = new Audio('tick2.wav');
+
     function updateClock() {
+        tickSound.currentTime = 0;
         const now = new Date();
         const seconds = now.getSeconds();
         const minutes = now.getMinutes();
         const hours = now.getHours();
 
 
-        const secondsDegrees = ((seconds / 60) * 360) ;
-        const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) ;
-        const hoursDegrees = ((hours % 12) / 12) * 360 + ((minutes / 60) * 30) ;
+        const secondsDegrees = ((seconds / 60) * 360);
+        const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6);
+        const hoursDegrees = ((hours % 12) / 12) * 360 + ((minutes / 60) * 30);
 
 
         document.querySelector('.arrow-s').style.transform = `rotate(${secondsDegrees}deg)`;
@@ -68,7 +71,10 @@
 
         document.querySelector('.clock-frame').style.boxShadow = `0 0 18px 4px rgba(140, 140, 140, 0.74) inset, ${shadowOffsetX}px ${shadowOffsetY}px 43px 12px rgba(24, 188, 189, 0.2)`;
 
+
+        tickSound.play();
     }
+
     setInterval(updateClock, 1000);
     updateClock();
 </script>
