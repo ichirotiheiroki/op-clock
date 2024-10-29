@@ -152,6 +152,12 @@ html, body {
       }
     }
 
+    @for $i from 13 through 18 {
+      .main:nth-of-type(#{$i}) {
+        transform: rotate(#{$i * 30}deg);
+      }
+    }
+
     .second {
       height: 4px;
       width: 100%;
@@ -179,13 +185,8 @@ html, body {
     }
 
 
-    @for $i from 0 through 5 {
-      .main:nth-of-type(#{$i}) {
-        transform: rotate(#{$i * 30}deg);
-      }
-    }
 
-    @for $i from 6 through 36 {
+    @for $i from 19 through 49 {
       .second:nth-of-type(#{$i}) {
         transform: rotate(#{$i * 6}deg);
       }

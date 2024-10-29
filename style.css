@@ -191,6 +191,24 @@ html, body {
   background-color: white;
   border-radius: 2px;
 }
+.clock-frame .clock .main:nth-of-type(13) {
+  transform: rotate(390deg);
+}
+.clock-frame .clock .main:nth-of-type(14) {
+  transform: rotate(420deg);
+}
+.clock-frame .clock .main:nth-of-type(15) {
+  transform: rotate(450deg);
+}
+.clock-frame .clock .main:nth-of-type(16) {
+  transform: rotate(480deg);
+}
+.clock-frame .clock .main:nth-of-type(17) {
+  transform: rotate(510deg);
+}
+.clock-frame .clock .main:nth-of-type(18) {
+  transform: rotate(540deg);
+}
 .clock-frame .clock .second {
   height: 4px;
   width: 100%;
@@ -213,63 +231,6 @@ html, body {
   width: 15px;
   background-color: #838383;
   border-radius: 2px;
-}
-.clock-frame .clock .main:nth-of-type(0) {
-  transform: rotate(0deg);
-}
-.clock-frame .clock .main:nth-of-type(1) {
-  transform: rotate(30deg);
-}
-.clock-frame .clock .main:nth-of-type(2) {
-  transform: rotate(60deg);
-}
-.clock-frame .clock .main:nth-of-type(3) {
-  transform: rotate(90deg);
-}
-.clock-frame .clock .main:nth-of-type(4) {
-  transform: rotate(120deg);
-}
-.clock-frame .clock .main:nth-of-type(5) {
-  transform: rotate(150deg);
-}
-.clock-frame .clock .second:nth-of-type(6) {
-  transform: rotate(36deg);
-}
-.clock-frame .clock .second:nth-of-type(7) {
-  transform: rotate(42deg);
-}
-.clock-frame .clock .second:nth-of-type(8) {
-  transform: rotate(48deg);
-}
-.clock-frame .clock .second:nth-of-type(9) {
-  transform: rotate(54deg);
-}
-.clock-frame .clock .second:nth-of-type(10) {
-  transform: rotate(60deg);
-}
-.clock-frame .clock .second:nth-of-type(11) {
-  transform: rotate(66deg);
-}
-.clock-frame .clock .second:nth-of-type(12) {
-  transform: rotate(72deg);
-}
-.clock-frame .clock .second:nth-of-type(13) {
-  transform: rotate(78deg);
-}
-.clock-frame .clock .second:nth-of-type(14) {
-  transform: rotate(84deg);
-}
-.clock-frame .clock .second:nth-of-type(15) {
-  transform: rotate(90deg);
-}
-.clock-frame .clock .second:nth-of-type(16) {
-  transform: rotate(96deg);
-}
-.clock-frame .clock .second:nth-of-type(17) {
-  transform: rotate(102deg);
-}
-.clock-frame .clock .second:nth-of-type(18) {
-  transform: rotate(108deg);
 }
 .clock-frame .clock .second:nth-of-type(19) {
   transform: rotate(114deg);
@@ -324,6 +285,45 @@ html, body {
 }
 .clock-frame .clock .second:nth-of-type(36) {
   transform: rotate(216deg);
+}
+.clock-frame .clock .second:nth-of-type(37) {
+  transform: rotate(222deg);
+}
+.clock-frame .clock .second:nth-of-type(38) {
+  transform: rotate(228deg);
+}
+.clock-frame .clock .second:nth-of-type(39) {
+  transform: rotate(234deg);
+}
+.clock-frame .clock .second:nth-of-type(40) {
+  transform: rotate(240deg);
+}
+.clock-frame .clock .second:nth-of-type(41) {
+  transform: rotate(246deg);
+}
+.clock-frame .clock .second:nth-of-type(42) {
+  transform: rotate(252deg);
+}
+.clock-frame .clock .second:nth-of-type(43) {
+  transform: rotate(258deg);
+}
+.clock-frame .clock .second:nth-of-type(44) {
+  transform: rotate(264deg);
+}
+.clock-frame .clock .second:nth-of-type(45) {
+  transform: rotate(270deg);
+}
+.clock-frame .clock .second:nth-of-type(46) {
+  transform: rotate(276deg);
+}
+.clock-frame .clock .second:nth-of-type(47) {
+  transform: rotate(282deg);
+}
+.clock-frame .clock .second:nth-of-type(48) {
+  transform: rotate(288deg);
+}
+.clock-frame .clock .second:nth-of-type(49) {
+  transform: rotate(294deg);
 }
 
 @media screen and (max-width: 768px) {

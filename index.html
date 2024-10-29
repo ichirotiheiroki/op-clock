@@ -17,18 +17,6 @@
 <div></div>
 <div class="clock-frame">
     <div class="clock">
-        <div class="number">10</div>
-        <div class="number">11</div>
-        <div class="number">12</div>
-        <div class="number">1</div>
-        <div class="number">2</div>
-        <div class="number">3</div>
-        <div class="number">4</div>
-        <div class="number">5</div>
-        <div class="number">6</div>
-        <div class="number">7</div>
-        <div class="number">8</div>
-        <div class="number">9</div>
         <div class="arrow-h"></div>
         <div class="arrow-m"></div>
         <div class="arrow-s"></div>
@@ -40,6 +28,16 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         const clock = document.querySelector('.clock');
+
+        const numbers = [9,8,7,6,5,4,3,2,1,12,11,10]
+
+        for(let number of numbers){
+
+            const div = document.createElement('span');
+            div.classList.add('number');
+            div.innerText=number.toString();
+            clock.prepend(div);
+        }
 
         for (let i = 0; i < 6; i++) {
             const whiteLine = document.createElement('span');
@@ -66,9 +64,9 @@
         const hoursDegrees = ((hours % 12) / 12) * 360 + ((minutes / 60) * 30) ;
 
 
-        document.querySelector('.arrow-s').style.transform = `  rotate(${secondsDegrees}deg)`;
-        document.querySelector('.arrow-m').style.transform = `  rotate(${minutesDegrees}deg)`;
-        document.querySelector('.arrow-h').style.transform = `  rotate(${hoursDegrees}deg)`;
+        document.querySelector('.arrow-s').style.transform = `rotate(${secondsDegrees}deg)`;
+        document.querySelector('.arrow-m').style.transform = `rotate(${minutesDegrees}deg)`;
+        document.querySelector('.arrow-h').style.transform = `rotate(${hoursDegrees}deg)`;
 
         const shadowOffsetX = 12 * Math.cos((secondsDegrees - 90) * (Math.PI / 180));
         const shadowOffsetY = 12 * Math.sin((secondsDegrees - 90) * (Math.PI / 180));
